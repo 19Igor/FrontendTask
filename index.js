@@ -2,7 +2,6 @@ document.getElementById('inputform').addEventListener('submit', function(event){
 	event.preventDefault()
 
   const formData = new FormData(event.target);
-  
   let xmlDoc = document.implementation.createDocument('', '', null);
   let root = xmlDoc.createElement('form');
   xmlDoc.appendChild(root);
@@ -17,7 +16,5 @@ document.getElementById('inputform').addEventListener('submit', function(event){
   let xmlString = serializer.serializeToString(xmlDoc);
 
   console.log(xmlString)
-
   document.getElementById("output-data").value = xmlString;
-
 })
