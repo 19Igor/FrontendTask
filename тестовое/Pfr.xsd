@@ -1,0 +1,85 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+   <xs:element name="ЗАПРОС_СВЕДЕНИЙ_О_СТРАХОВОМ_СТАЖЕ">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="Фамилия">
+               <xs:simpleType>
+                  <xs:restriction base="xs:normalizedString">
+                     <xs:maxLength value="40" />
+                     <xs:minLength value="1" />
+                  </xs:restriction>
+               </xs:simpleType>
+            </xs:element>
+            <xs:element name="Имя">
+               <xs:simpleType>
+                  <xs:restriction base="xs:normalizedString">
+                     <xs:maxLength value="40" />
+                     <xs:minLength value="1" />
+                  </xs:restriction>
+               </xs:simpleType>
+            </xs:element>
+            <xs:element name="Отчество" minOccurs="0">
+               <xs:simpleType>
+                  <xs:restriction base="xs:normalizedString">
+                     <xs:maxLength value="40" />
+                  </xs:restriction>
+               </xs:simpleType>
+            </xs:element>
+            <xs:element name="СНИЛС">
+               <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                     <xs:pattern value="\d{3}-\d{3}-\d{3} \d{2}" />
+                  </xs:restriction>
+               </xs:simpleType>
+            </xs:element>
+            <xs:element name="ДатаРождения">
+               <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                     <xs:pattern value="\d{2}.\d{2}.\d{4}" />
+                  </xs:restriction>
+               </xs:simpleType>
+            </xs:element>
+            <xs:element name="НаличиеДанных">
+               <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                     <xs:enumeration value="ДА" />
+                     <xs:enumeration value="НЕТ" />
+                  </xs:restriction>
+               </xs:simpleType>
+            </xs:element>
+            <xs:element name="ОбщаяПродолжительностьСтраховогоСтажаНаДатуОбращенияГражданинаВОСЗ">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="ОбщаяПродолжительностьСтраховогоСтажаЛет">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:integer">
+                              <xs:minInclusive value="0" />
+                              <xs:maxInclusive value="999" />
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:element>
+                     <xs:element name="ОбщаяПродолжительностьСтраховогоСтажаМесяцев">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:integer">
+                              <xs:minInclusive value="0" />
+                              <xs:maxInclusive value="99" />
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:element>
+                     <xs:element name="ОбщаяПродолжительностьСтраховогоСтажаДней">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:integer">
+                              <xs:minInclusive value="0" />
+                              <xs:maxInclusive value="99" />
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:element>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+</xs:schema>

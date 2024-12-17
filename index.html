@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Website</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+  </style>
+</head>
+<body>
+  <div class="title_form">
+    <div class="title_lable">
+      Форма запроса
+    </div>
+  </div>
+  
+  <!-- required pattern="[A-Za-z0-9_\s\-]+" -->
+
+  <form action="" class="form" id="inputform">
+    <div class="common_rectangle">
+      <label class="text_style" for="middle_name">Фамилия</label>
+      <input class="input_field" type="text" id="middle_name" name="middle_name" maxlength="40" minlength="1" pattern="[A-Za-zА-Яа-яЁё ]+" required value="Иванов">
+    </div>
+    
+    <div class="common_rectangle">
+      <label class="text_style" for="name">Имя</label>
+      <input class="input_field" type="text" id="name" name="name" maxlength="40" minlength="1" required pattern="[A-Za-zА-Яа-яЁё ]+" value="Иван">
+    </div>
+  
+    <div class="common_rectangle">
+      <label class="text_style" for="surname">Отчество</label>
+      <input class="input_field" type="text" id="surname" name="surname" maxlength="40" pattern="[A-Za-zА-Яа-яЁё ]+" value="Иванович">
+    </div>
+  
+    <div class="common_rectangle">
+      <label class="text_style" for="snils">СНИЛС</label>
+      <input class="input_field" type="text" id="snils" name="snils" pattern="\d{3}-\d{3}-\d{3} \d{2}" required value="888-888-888 88">
+    </div>
+  
+    <div class="common_rectangle">
+      <label class="text_style" for="birthday">Дата рождения</label>
+      <input class="input_field" type="text" id="birthday" name="birthday" maxlength="40" minlength="1" pattern="\d{2}.\d{2}.\d{4}" required value="12.12.1995">
+    </div>
+  
+    <div class="common_rectangle">
+      <label class="text_style" for="data-availability">Наличие данных</label>
+      <select class="input_field" style="cursor: grab;" id="data-availability" name="data-availability">
+        <option value="none"></option>
+        <option value="yes">Да</option>
+        <option value="no">Нет</option>
+      </select>
+    </div>
+  
+    <div class="title_form">
+      <div class="title_lable">
+        Общая продолжительность страхового стажа на дату обращения гражаданина
+      </div>
+    </div>
+
+    <div>
+      <div class="common_rectangle">
+        <label for="years" class="text_style">Общая продолжительность страхового стажа лет</label>
+        <input class="input_field" type="number" name="years" id="years" min="0" max="99" value="3">
+      </div>
+  
+      <div class="common_rectangle">
+        <label for="months" class="text_style">Общая продолжительность страхового стажа месяцев</label>
+        <input type="number" class="input_field" name="months" id="months" min="0" max="99" value="3">
+      </div>
+  
+      <div class="common_rectangle" style="margin-bottom: 5px;">
+        <label for="days" class="text_style">Общая продолжительность страхового стажа дней</label>
+        <input type="number" class="input_field" name="days" id="days" min="0" max="99" value="3">
+      </div>
+    </div>
+  
+    <div>
+      <button type="submit" class="save_button">Сохранить</button>
+    </div>
+  </form>
+
+  <div class="title_form" style="margin-top: 45px; height: auto;">
+    <div class="title_lable">Итоговый запрос</div>
+    <div class="common_rectangle" style="margin: 15px 20px 15px 20px; border: 2px solid rgb(233, 233, 233); border-radius: 0%; box-shadow: 1px 1px 7px black;">
+      <label for="output-data" style="text-align: end; margin-right: 10px;">Запрос</label>
+      <textarea class="output-data" name="output-data" id="output-data"></textarea>
+    </div>
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>
