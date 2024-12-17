@@ -1,20 +1,3 @@
-function validation(form){
-  const doc = document.implementation.createHTMLDocument("", "", null);
-  let rootElement = doc.createElement("userData");
-
-
-
-
-
-  form.querySelectorAll('input').forEach(element => {
-    console.log(element.value);
-  });
-  
-  
-
-	return true;
-}
-
 document.getElementById('inputform').addEventListener('submit', function(event){
 	event.preventDefault()
 
